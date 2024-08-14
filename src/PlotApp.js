@@ -146,7 +146,9 @@ const PlotApp = () => {
                             max="10"
                             step="0.1"
                             value={beta1}
-                            onChange={(e) => setBeta1(parseFloat(e.target.value))}
+                            onChange={(e) => {
+                                setBeta1(parseFloat(e.target.value));
+                            }}
                         />
                     </div>
                     <div>
@@ -157,7 +159,9 @@ const PlotApp = () => {
                             max="10"
                             step="0.1"
                             value={beta2}
-                            onChange={(e) => setBeta2(parseFloat(e.target.value))}
+                            onChange={(e) => {
+                                setBeta2(parseFloat(e.target.value));
+                            }}
                         />
                     </div>
                 </div>
