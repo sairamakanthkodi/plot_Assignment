@@ -58,6 +58,8 @@ const PlotApp = () => {
     };
 
     const updateSurfacePlot = () => {
+        if (data.x1.length === 0 || data.x2.length === 0 || data.y.length === 0) return [];
+
         const beta1Range = Array.from({ length: 41 }, (_, i) => -10 + i * 0.5);
         const beta2Range = Array.from({ length: 41 }, (_, i) => -10 + i * 0.5);
 
