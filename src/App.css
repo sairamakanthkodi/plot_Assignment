@@ -1,5 +1,9 @@
 body {
-  background-color: #f8f9fa;
+  background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+  color: #ffffff; /* Set text color to white for better contrast */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -9,27 +13,29 @@ body {
 }
 
 .plot-section {
-  background-color: #ffffff;
+  background-color: #282c34; /* Darker background for the plot section */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .plot-box {
-  background-color: #ffffff;
-  border: 2px solid #dee2e6;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(40, 44, 52, 0.8); /* Darker transparent background for plot boxes */
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin-bottom: 20px;
   width: 100%;
-  height: 500px;
+  height: 400px;
 }
 
 .slider-label {
-  color: #495057;
-  font-size: 1rem;
+  color: #ffffff; /* White color for slider labels */
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .slider-section {
@@ -37,6 +43,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .slider-section div {
@@ -45,23 +52,49 @@ body {
 }
 
 .slider-section input[type="range"] {
+  -webkit-appearance: none;
   width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.slider-section input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.slider-section input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 @media(min-width: 768px) {
   .slider-section div {
-      flex: 1 1 auto;
+    flex: 1 1 auto;
   }
 }
 
 h3 {
-  color: #343a40;
+  color: #f8f9fa;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 p {
-  color: #6c757d;
+  color: #ced4da;
   font-size: 1rem;
   margin-bottom: 20px;
 }

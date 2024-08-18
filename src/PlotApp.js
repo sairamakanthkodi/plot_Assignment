@@ -92,13 +92,43 @@ const PlotApp = () => {
             <div className="plot-section text-center">
                 <h3>Interactive Scatter and 3D Surface Plot</h3>
                 <p>Adjust the sliders to see how different beta values affect the plots</p>
+                
+                <div className="slider-section">
+                    <div>
+                        <label htmlFor="beta1Slider" className="form-label slider-label">Beta 1: {beta1}</label>
+                        <input
+                            type="range"
+                            min="-10"
+                            max="10"
+                            step="0.1"
+                            value={beta1}
+                            onChange={(e) => {
+                                setBeta1(parseFloat(e.target.value));
+                            }}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="beta2Slider" className="form-label slider-label">Beta 2: {beta2}</label>
+                        <input
+                            type="range"
+                            min="-10"
+                            max="10"
+                            step="0.1"
+                            value={beta2}
+                            onChange={(e) => {
+                                setBeta2(parseFloat(e.target.value));
+                            }}
+                        />
+                    </div>
+                </div>
+
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <div className="plot-box">
                             <Plot
                                 data={updateScatterPlot()}
                                 layout={{
-                                    title: `Scatter Plot (Beta1: ${beta1}, Beta2: ${beta2})`,
+                                    title: `Scatter Plot `,
                                     xaxis: { title: 'Predicted Values' },
                                     yaxis: { title: 'Actual Values' },
                                     margin: { t: 40, r: 40, b: 40, l: 50 },
@@ -108,7 +138,7 @@ const PlotApp = () => {
                             />
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <div className="plot-box">
                             <Plot
                                 data={updateSurfacePlot()}
@@ -131,38 +161,6 @@ const PlotApp = () => {
                                 className="w-100 h-100"
                             />
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="plot-section text-center">
-                <h5 className="slider-label">Adjust Beta1 & Beta2:</h5>
-                <div className="slider-section">
-                    <div>
-                        <label htmlFor="beta1Slider" className="form-label slider-label">Beta 1</label>
-                        <input
-                            type="range"
-                            min="-10"
-                            max="10"
-                            step="0.1"
-                            value={beta1}
-                            onChange={(e) => {
-                                setBeta1(parseFloat(e.target.value));
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="beta2Slider" className="form-label slider-label">Beta 2</label>
-                        <input
-                            type="range"
-                            min="-10"
-                            max="10"
-                            step="0.1"
-                            value={beta2}
-                            onChange={(e) => {
-                                setBeta2(parseFloat(e.target.value));
-                            }}
-                        />
                     </div>
                 </div>
             </div>
